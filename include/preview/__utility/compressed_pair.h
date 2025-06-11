@@ -64,8 +64,8 @@ class compressed_slot : basic_compressed_slot<T> {
   using slot_base = basic_compressed_slot<T>;
 
  public:
-  using slot_base::slot_base;
-  using slot_base::value;
+  using basic_compressed_slot<T>::basic_compressed_slot;
+  using basic_compressed_slot<T>::value;
 
   template<std::size_t I> constexpr std::enable_if_t<(I == index),       T&>  get()       &  noexcept { return value(); }
   template<std::size_t I> constexpr std::enable_if_t<(I == index), const T&>  get() const &  noexcept { return value(); }
